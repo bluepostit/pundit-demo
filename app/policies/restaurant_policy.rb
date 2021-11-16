@@ -9,7 +9,7 @@ class RestaurantPolicy < ApplicationPolicy
 
   def update?
     # is the current user the owner of the record (restaurant instance)?
-    is_owner?
+    is_owner? || user.admin?
   end
 
   def destroy?
